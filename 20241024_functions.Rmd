@@ -1,0 +1,47 @@
+---
+title: "Functions"
+author: "Kaleb J. Frierson"
+date: "2024-10-24"
+output: html_document
+---
+
+# Notes
+
+What goes into writing a function? 
+
+Arguments - stuff that goes in 
+Body - does the stuff you want it to do
+Return objects - the product of function
+
+Arguments: 
+
+What goes into your function. These get used by the code in the body. x in mean(x), for example. You can take default values, which define a function's input until a user overwrites them. na.rm = FALSE in mean(x). NAMES MATTER, use reasonable names that are common/generic. vectors x, y, z, dataframe = df, n for number of rows or sample size, etc. Very straightforward common names. 
+
+Body: 
+
+A common structure: data/input with conditional execution, operations, and formatting of the output. Single functions shouldn't be TOO long, the more code the more opportunities for errors when using your function. 
+
+Return: 
+
+Implicit returned values are the last things in your function. Explicit returns use return() they tell your function exactly what to return. Single values or a collection of values can be returned. Returns can be named or unnamed. 
+
+Scoping: 
+
+How does R handle scoping? What is scoping? Scoping is how R looks for variables. The "global environment" is the interactive workspace where you spend the vast majority of your time. Each time you call a function, a new environment is created to host it's execution. If the function uses a variable that isn't defined in that environment, it will go looking in the global environment which isn't great. Can become an issue. Be careful with inputs in a function and make sure they are self contained. 
+
+Conditional execution: 
+
+Sometimes you only want to do something if a condition is met. Follows basic logic rules: 
+if (condition_1) {thing} 
+
+
+How to write functions: 
+
+They should be small, they should work, they should work well and interact easily. Unneeded complexity should be avoided. Clarity is better than cleverness! 
+
+# code
+
+```{r}
+library(tidyverse)
+```
+
